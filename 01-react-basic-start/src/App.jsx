@@ -1,12 +1,9 @@
 import Header from './components/Header'
+import WebDeveloper from './components/WebDeveloper'
 import Button from './components/Button'
+
 import { WebDevelopers } from './data'
 
-function WebDeveloper(props) {
-    return (
-        <li><strong>{props.title}</strong><p>{props.description}</p></li>
-    )
-}
 
 export default function App() {
     return (
