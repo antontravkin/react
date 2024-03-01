@@ -1,6 +1,6 @@
 import Header from './components/Header'
 import WebDeveloper from './components/WebDeveloper'
-import Button from './components/Button'
+import Button from './components/Button/Button'
 
 import { WebDevelopers } from './data'
 
