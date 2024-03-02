@@ -1,11 +1,14 @@
-import Header from './components/Header'
+import Header from './components/Header/Header'
 import IntroSection from './components/IntroSection'
 import Section1 from './components/Section1'
 import Section2 from './components/Section2'
-import { Fragment } from 'react';
+import TabsSection from './components/TabsSection'
+import FeedbackSection from './components/FeedbackSection'
+
+import { Fragment, useState } from 'react';
 
 export default function App() {
-
+    const [tab, setTab] = useState('feedback')
 
     /* let tabContent = null
     if (contentType){
@@ -18,11 +21,18 @@ export default function App() {
     return (
         <>
             <Header />
-            <IntroSection />
+
             <main>
-                <Section1 />
-                <Section2 />
-            </main>
+                <IntroSection />
+                <TabsSection active={tab} onChange={(carrent) => setTab(carrent)} />
+                {tab === 'main' && (
+                    <>
+                        <Section1 />
+                        <Section2 />
+                    </>
+                )}
+                {tab === 'feedback' && <FeedbackSection />}
+            </main >
         </>
     );
 }
