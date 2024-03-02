@@ -22,7 +22,6 @@ export default function App() {
             <main>
                 <Section1 />
                 <Section2 />
-
             </main>
         </>
     );
