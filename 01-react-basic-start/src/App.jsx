@@ -3,12 +3,13 @@ import IntroSection from './components/IntroSection'
 import Section1 from './components/Section1'
 import Section2 from './components/Section2'
 import TabsSection from './components/TabsSection'
+import EffectSection from './components/EffectSection'
 import FeedbackSection from './components/FeedbackSection'
 
 import { Fragment, useState } from 'react';
 
 export default function App() {
-    const [tab, setTab] = useState('feedback')
+    const [tab, setTab] = useState('effect')
 
     /* let tabContent = null
     if (contentType){
@@ -32,6 +33,7 @@ export default function App() {
                     </>
                 )}
                 {tab === 'feedback' && <FeedbackSection />}
+                {tab === 'effect' && <EffectSection />}
             </main >
         </>
     );
