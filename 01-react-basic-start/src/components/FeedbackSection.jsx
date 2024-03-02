@@ -13,7 +13,7 @@ export default function FeedbackSection() {
                 setShow(true)
             }
         }
-        console.log(input)
+        //console.log(input)
         //debugger отладка
         return (
             <div>

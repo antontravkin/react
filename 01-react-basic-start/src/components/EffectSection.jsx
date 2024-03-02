@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from "react"
 import Button from "./Button/Button"
 import Modal from './Modal/Modal'
+import useImput from "../hooks/useImput"
 
 export default function EffectSection() {
+    const input = useImput()
     const [isOpenModal, setIsOpenModal] = useState(false)
     const [loading, setLoading] = useState(false)
     const [users, setUsers] = useState([])
@@ -32,7 +34,9 @@ export default function EffectSection() {
 
             {loading && <p>loading...</p>}
             {!loading && <ul>
-                {users.map(user => <li key={user.id}>{user.name} <p>{user.email}</p></li>)}
+                <input type="text" className="control" {...input} />
+                <div style={{ marginBottom: '1rem' }}>{input.value}</div>
+                {users.filter(user => user.name.toLowerCase().includes(input.value)).map(user => <li key={user.id}>{user.name} <p>{user.email}</p></li>)}
 
             </ul>}
 
