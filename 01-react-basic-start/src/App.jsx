@@ -1,17 +1,10 @@
 import Header from './components/Header'
-import WebDeveloper from './components/WebDeveloper'
-import Button from './components/Button/Button'
-import { useState } from 'react'
-import { WebDevelopers, differences } from './data'
-
+import Section1 from './components/Section1'
+import Section2 from './components/Section2'
+import { Fragment } from 'react';
 
 export default function App() {
-    const [contentType, setContentType] = useState(null)
 
-    function handleClick(type) {
-        console.log('click', type)
-        setContentType(type)
-    }
 
     /* let tabContent = null
     if (contentType){
@@ -22,31 +15,13 @@ export default function App() {
     } */
 
     return (
-        <div>
+        <>
             <Header />
             <main>
-                <section>
-                    <h3>WEB-РАЗРАБОТЧИК</h3>
-                    <ul>
-                        {WebDevelopers.map(el =>
-                            <WebDeveloper key={el.title} {...el} />)}
-                    </ul>
-                    <Button isActive={contentType === 'click1'} onClick={() => handleClick('click1')}>Click 1</Button>
-                    <Button isActive={contentType === 'click2'} onClick={() => handleClick('click2')}>Click 2</Button>
-                    <Button isActive={contentType === 'click3'} onClick={() => handleClick('click3')}>Click 3</Button>
+                <Section1 />
+                <Section2 />
 
-                    {/* {contentType ? <p>{differences[contentType]}</p> : <p>Click btn</p>}
-
-                    {!contentType ? <p>Click btn</p> : null}
-                    {contentType ? <p>{differences[contentType]}</p> : null} */}
-
-                    {!contentType && <p>Click btn</p>}
-                    {contentType && <p>{differences[contentType]}</p>}
-
-                    {/* {tabContent} */}
-
-                </section>
             </main>
-        </div>
+        </>
     );
 }
